@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-image: url('https://miro.medium.com/v2/resize:fit:2000/0*aBWBP9-7NZhdV_SR.jpeg');
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #heart {
+            color: red;
+            font-size: 3em;
+        }
+
+        #question {
+            color: white;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        #options {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .option {
+            font-size: 1.2em;
+            margin: 0 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const noButton = document.getElementById('no');
+            
+            noButton.addEventListener('mouseover', function () {
+                const newX = Math.random() * window.innerWidth;
+                const newY = Math.random() * window.innerHeight;
+                noButton.style.position = 'absolute';
+                noButton.style.left = newX + 'px';
+                noButton.style.top = newY + 'px';
+            });
+
+            const yesButton = document.getElementById('yes');
+            yesButton.addEventListener('click', function () {
+                // Sim, efeito de fogos de artifício (pode implementar um efeito mais complexo)
+                alert('Parabéns! Vocês estão namorando!');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="heart">&#10084;</div>
+    <div id="question">Quer namorar comigo?</div>
+    <div id="options">
+        <button id="yes" class="option">Sim</button>
+        <button id="no" class="option">Não</button>
+    </div>
+</body>
+</html>
